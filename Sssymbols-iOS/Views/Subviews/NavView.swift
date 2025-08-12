@@ -20,6 +20,9 @@ struct NavView<Content: View>: View {
     @Binding var searchText: String
     @Binding var searchFavoritesText: String
     
+    // favorites
+    @State var deleteAllFavoritesIsPresented: Bool = false
+    
     // body
     var body: some View {
         if selectedTab != 3 {
@@ -33,6 +36,25 @@ struct NavView<Content: View>: View {
                         .font(.system(size: 15))
                         .foregroundStyle(.secondary)
                     } // TOOL BAR ITEM
+                    
+                    if selectedTab == 2 {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Menu(content: {
+                                Menu(content: {
+                                    Button(role: .destructive, action: {
+                                        SFSymbols.shared.favoritesSymbols6.removeAll()
+                                        UserDefaults.standard.set(SFSymbols.shared.favoritesSymbols6, forKey: "FAVORITES_SYMBOLS_6")
+                                    }, label: {
+                                        Label("Confirm", systemImage: "exclamationmark.circle")
+                                    }) // BUTTON + label
+                                }, label: {
+                                    Label("Delete all Favorites", systemImage: "trash")
+                                }) // MENU + label
+                            }, label: {
+                                Label("Tools", systemImage: "ellipsis.circle")
+                            }) // MENU + label
+                        } // TOOL BAR ITEM
+                    } // IF
                 } // TOOL BAR
             } // NAVIGATION STACK
         } else {

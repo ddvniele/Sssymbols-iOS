@@ -43,7 +43,7 @@ struct FavoritesView: View {
                         } // IF ELSE
                         
                         RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.tertiary)
                         .opacity(0.2)
                         .frame(width: 60, height: 60)
                     } // ZSTACK

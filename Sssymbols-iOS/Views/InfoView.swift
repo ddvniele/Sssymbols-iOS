@@ -24,7 +24,7 @@ struct InfoView: View {
                     Text("open source with ❤️")
                     .font(.system(size: 12.5))
                     .foregroundStyle(.gray)
-                    Link("Project on GitHub", destination: URL(string: "https://github.com/ddvniele/Sssymbols")!)
+                    Link("Project on GitHub", destination: URL(string: "https://github.com/ddvniele/Sssymbols-iOS")!)
                     .buttonStyle(.bordered)
                 } // VSTACK
                 .padding(.leading, 20)
@@ -45,7 +45,6 @@ struct InfoView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 90, height: 90)
-                .clipShape(Circle())
                 VStack(alignment: .leading) {
                     Text("Dan ツ")
                     .font(.system(size: 25, weight: .medium, design: .rounded))
@@ -81,7 +80,7 @@ struct InfoView: View {
                     Text("Download the macOS version ↓")
                     .font(.system(size: 12.5))
                     .foregroundStyle(.gray)
-                    Link("Download for macOS", destination: URL(string: "https://github.com/ddvniele/Sssymbols/releases/latest")!)
+                    Link("Download for macOS", destination: URL(string: "https://github.com/ddvniele/Sssymbols-macOS")!)
                     .buttonStyle(.bordered)
                 } // VSTACK
                 .padding(.leading, 20)
