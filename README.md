@@ -48,6 +48,5 @@ just a small update - had to fix something:
   - sorry for the big wait, but finally i'm back! this is the biggest update i've ever made:
     - new Favorites tab: keep your favorites symbols always with you when you need them the most
     - new Info tab: no need to open another window anymore
-    - you can now change the menu bar icon with every symbol you want
     - and the biggest surprise: a completely new iOS app that reflects every aspect of the macOS one! you can download it [here](https://github.com/ddvniele/Sssymbols-iOS/releases/latest)
     - last but not least: small bug fixes and small UI & UX refinements
