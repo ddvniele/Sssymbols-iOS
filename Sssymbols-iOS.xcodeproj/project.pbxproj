@@ -8,17 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		647D8F522C8A723F00C86BA4 /* Sssymbols_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F512C8A723F00C86BA4 /* Sssymbols_iOSApp.swift */; };
-		647D8F542C8A723F00C86BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F532C8A723F00C86BA4 /* ContentView.swift */; };
+		647D8F542C8A723F00C86BA4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F532C8A723F00C86BA4 /* MainView.swift */; };
 		647D8F562C8A724100C86BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647D8F552C8A724100C86BA4 /* Assets.xcassets */; };
 		647D8F592C8A724100C86BA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647D8F582C8A724100C86BA4 /* Preview Assets.xcassets */; };
+		647D8F622C8A733F00C86BA4 /* AllSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F612C8A733F00C86BA4 /* AllSymbolsView.swift */; };
+		647D8F642C8A734800C86BA4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F632C8A734800C86BA4 /* FavoritesView.swift */; };
+		647D8F662C8A735000C86BA4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F652C8A735000C86BA4 /* InfoView.swift */; };
+		647D8F682C8B5FA000C86BA4 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F672C8B5FA000C86BA4 /* SFSymbols.swift */; };
+		647D8F6A2C8B66A200C86BA4 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F692C8B66A200C86BA4 /* NavView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		647D8F882C8CC04200C86BA4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		647D8F4E2C8A723F00C86BA4 /* Sssymbols-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sssymbols-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647D8F512C8A723F00C86BA4 /* Sssymbols_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sssymbols_iOSApp.swift; sourceTree = "<group>"; };
-		647D8F532C8A723F00C86BA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		647D8F532C8A723F00C86BA4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		647D8F552C8A724100C86BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		647D8F582C8A724100C86BA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		647D8F612C8A733F00C86BA4 /* AllSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSymbolsView.swift; sourceTree = "<group>"; };
+		647D8F632C8A734800C86BA4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		647D8F652C8A735000C86BA4 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		647D8F672C8B5FA000C86BA4 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		647D8F692C8B66A200C86BA4 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				647D8F512C8A723F00C86BA4 /* Sssymbols_iOSApp.swift */,
-				647D8F532C8A723F00C86BA4 /* ContentView.swift */,
+				647D8F532C8A723F00C86BA4 /* MainView.swift */,
+				647D8F5F2C8A730900C86BA4 /* Views */,
+				647D8F602C8A731100C86BA4 /* Models */,
 				647D8F552C8A724100C86BA4 /* Assets.xcassets */,
 				647D8F572C8A724100C86BA4 /* Preview Content */,
 			);
@@ -67,6 +92,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		647D8F5F2C8A730900C86BA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				647D8F612C8A733F00C86BA4 /* AllSymbolsView.swift */,
+				647D8F632C8A734800C86BA4 /* FavoritesView.swift */,
+				647D8F652C8A735000C86BA4 /* InfoView.swift */,
+				647D8F6B2C8B6ECC00C86BA4 /* Subviews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		647D8F602C8A731100C86BA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				647D8F672C8B5FA000C86BA4 /* SFSymbols.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		647D8F6B2C8B6ECC00C86BA4 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				647D8F692C8B66A200C86BA4 /* NavView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +129,7 @@
 				647D8F4A2C8A723F00C86BA4 /* Sources */,
 				647D8F4B2C8A723F00C86BA4 /* Frameworks */,
 				647D8F4C2C8A723F00C86BA4 /* Resources */,
+				647D8F882C8CC04200C86BA4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -137,7 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647D8F542C8A723F00C86BA4 /* ContentView.swift in Sources */,
+				647D8F6A2C8B66A200C86BA4 /* NavView.swift in Sources */,
+				647D8F642C8A734800C86BA4 /* FavoritesView.swift in Sources */,
+				647D8F622C8A733F00C86BA4 /* AllSymbolsView.swift in Sources */,
+				647D8F682C8B5FA000C86BA4 /* SFSymbols.swift in Sources */,
+				647D8F542C8A723F00C86BA4 /* MainView.swift in Sources */,
+				647D8F662C8A735000C86BA4 /* InfoView.swift in Sources */,
 				647D8F522C8A723F00C86BA4 /* Sssymbols_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -267,6 +325,7 @@
 		647D8F5D2C8A724100C86BA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -275,27 +334,34 @@
 				DEVELOPMENT_TEAM = 79QAXFUAX6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sssymbols!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddvniele.Sssymbols-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		647D8F5E2C8A724100C86BA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,21 +370,27 @@
 				DEVELOPMENT_TEAM = 79QAXFUAX6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sssymbols!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddvniele.Sssymbols-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

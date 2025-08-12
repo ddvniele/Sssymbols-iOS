@@ -11,7 +11,7 @@ import SwiftUI
 struct Sssymbols_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
-    }
-}
+            MainView()
+        } // WINDOW GROUP
+    } // VAR BODY
+} // STRUCT SSSYMBOLS IOS APP
