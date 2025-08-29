@@ -31,109 +31,214 @@ struct AllSymbolsView: View {
         ScrollView {
             LazyVGrid(columns: columns, alignment: .center, spacing: 20) {
                 ForEach(searchText == "" ? SFSymbols.shared.allSymbols6 : SFSymbols.shared.searchedSymbols, id: \.self) { symbol in
-                    ZStack {
-                        if clipboardText == symbol {
-                            Text("Copied!")
-                            .font(.system(size: 10))
-                        } else if addedToFavorites == symbol {
-                            Text("Added!")
-                            .font(.system(size: 10))
-                        } else if removedFromFavorites == symbol {
-                            Text("Removed!")
-                            .font(.system(size: 8))
-                        } else {
-                            Image(systemName: symbol)
-                            .font(.system(size: 20))
-                        } // IF ELSE
-                        
-                        RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .foregroundStyle(.tertiary)
-                        .opacity(0.2)
-                        .frame(width: 60, height: 60)
-                    } // ZSTACK
-                    .contentShape(ContentShapeKinds.contextMenuPreview, RoundedRectangle(cornerRadius: 15, style: .continuous))
-                    .contextMenu {
-                        Section(symbol) {
-                            Button(action: {
-                                SFSymbols.shared.stringToClipboard(text: symbol)
-                                withAnimation {
-                                    clipboardText = symbol
-                                    let seconds = 3.0
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                        if clipboardText == symbol {
-                                            withAnimation {
-                                                clipboardText = ""
-                                            } // WITH ANIMATION
-                                        } // IF
-                                    } // DISPATCH QUEUE
-                                } // WITH ANIMATION
-                            }, label: {
-                                Label("Copy symbol name", systemImage: "doc.on.clipboard")
-                            }) // BUTTON + label
+                    if #available(iOS 26, *) {
+                        ZStack {
+                            Circle()
+                            .foregroundStyle(.tertiary)
+                            .opacity(0.2)
+                            .glassEffect(.regular)
+                            .frame(width: 60, height: 60)
                             
-                            Divider()
-                            
-                            if SFSymbols.shared.favoritesSymbols6.contains(symbol) {
-                                Button(action: {
-                                    if let index = SFSymbols.shared.favoritesSymbols6.firstIndex(of: symbol) {
-                                        SFSymbols.shared.removeFromFavorites(index: index)
-                                        withAnimation {
-                                            removedFromFavorites = symbol
-                                            let seconds = 3.0
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                                if removedFromFavorites == symbol {
-                                                    withAnimation {
-                                                        removedFromFavorites = ""
-                                                    } // WITH ANIMATION
-                                                } // IF
-                                            } // DISPATCH QUEUE
-                                        } // WITH ANIMATION
-                                    } // IF LET
-                                }, label: {
-                                    Label("Remove from Favorites", systemImage: "star.slash.fill")
-                                }) // BUTTON + label
+                            if clipboardText == symbol {
+                                Text("Copied!")
+                                .font(.system(size: 10))
+                            } else if addedToFavorites == symbol {
+                                Text("Added!")
+                                .font(.system(size: 10))
+                            } else if removedFromFavorites == symbol {
+                                Text("Removed!")
+                                .font(.system(size: 8))
                             } else {
+                                Image(systemName: symbol)
+                                .font(.system(size: 20))
+                            } // IF ELSE
+                        } // ZSTACK
+                        .contentShape(ContentShapeKinds.contextMenuPreview, Circle())
+                        .contextMenu {
+                            Section(symbol) {
                                 Button(action: {
-                                    SFSymbols.shared.addToFavorites(symbol: symbol)
+                                    SFSymbols.shared.stringToClipboard(text: symbol)
                                     withAnimation {
-                                        addedToFavorites = symbol
+                                        clipboardText = symbol
                                         let seconds = 3.0
                                         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                            if addedToFavorites == symbol {
+                                            if clipboardText == symbol {
                                                 withAnimation {
-                                                    addedToFavorites = ""
+                                                    clipboardText = ""
                                                 } // WITH ANIMATION
                                             } // IF
                                         } // DISPATCH QUEUE
                                     } // WITH ANIMATION
                                 }, label: {
-                                    Label("Add to Favorites", systemImage: "star.fill")
+                                    Label("Copy symbol name", systemImage: "doc.on.clipboard")
                                 }) // BUTTON + label
+                                
+                                Divider()
+                                
+                                if SFSymbols.shared.favoritesSymbols.contains(symbol) {
+                                    Button(action: {
+                                        if let index = SFSymbols.shared.favoritesSymbols.firstIndex(of: symbol) {
+                                            SFSymbols.shared.removeFromFavorites(index: index)
+                                            withAnimation {
+                                                removedFromFavorites = symbol
+                                                let seconds = 3.0
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                                    if removedFromFavorites == symbol {
+                                                        withAnimation {
+                                                            removedFromFavorites = ""
+                                                        } // WITH ANIMATION
+                                                    } // IF
+                                                } // DISPATCH QUEUE
+                                            } // WITH ANIMATION
+                                        } // IF LET
+                                    }, label: {
+                                        Label("Remove from Favorites", systemImage: "star.slash.fill")
+                                    }) // BUTTON + label
+                                } else {
+                                    Button(action: {
+                                        SFSymbols.shared.addToFavorites(symbol: symbol)
+                                        withAnimation {
+                                            addedToFavorites = symbol
+                                            let seconds = 3.0
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                                if addedToFavorites == symbol {
+                                                    withAnimation {
+                                                        addedToFavorites = ""
+                                                    } // WITH ANIMATION
+                                                } // IF
+                                            } // DISPATCH QUEUE
+                                        } // WITH ANIMATION
+                                    }, label: {
+                                        Label("Add to Favorites", systemImage: "star.fill")
+                                    }) // BUTTON + label
+                                } // IF ELSE
+                            } // SECTION
+                        } // CONTEXT MENU
+                        .onTapGesture {
+                            SFSymbols.shared.stringToClipboard(text: symbol)
+                            withAnimation {
+                                clipboardText = symbol
+                                let seconds = 3.0
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    if clipboardText == symbol {
+                                        withAnimation {
+                                            clipboardText = ""
+                                        } // WITH ANIMATION
+                                    } // IF
+                                } // DISPATCH QUEUE
+                            } // WITH ANIMATION
+                        } // ON TAP GESTURE
+                        .sensoryFeedback(.success, trigger: clipboardText == symbol)
+                    } else {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .foregroundStyle(.tertiary)
+                            .opacity(0.2)
+                            .frame(width: 60, height: 60)
+                            
+                            if clipboardText == symbol {
+                                Text("Copied!")
+                                .font(.system(size: 10))
+                            } else if addedToFavorites == symbol {
+                                Text("Added!")
+                                .font(.system(size: 10))
+                            } else if removedFromFavorites == symbol {
+                                Text("Removed!")
+                                .font(.system(size: 8))
+                            } else {
+                                Image(systemName: symbol)
+                                .font(.system(size: 20))
                             } // IF ELSE
-                        } // SECTION
-                    } // CONTEXT MENU
-                    .onTapGesture {
-                        SFSymbols.shared.stringToClipboard(text: symbol)
-                        withAnimation {
-                            clipboardText = symbol
-                            let seconds = 3.0
-                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                if clipboardText == symbol {
+                        } // ZSTACK
+                        .contentShape(ContentShapeKinds.contextMenuPreview, RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        .contextMenu {
+                            Section(symbol) {
+                                Button(action: {
+                                    SFSymbols.shared.stringToClipboard(text: symbol)
                                     withAnimation {
-                                        clipboardText = ""
+                                        clipboardText = symbol
+                                        let seconds = 3.0
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                            if clipboardText == symbol {
+                                                withAnimation {
+                                                    clipboardText = ""
+                                                } // WITH ANIMATION
+                                            } // IF
+                                        } // DISPATCH QUEUE
                                     } // WITH ANIMATION
-                                } // IF
-                            } // DISPATCH QUEUE
-                        } // WITH ANIMATION
-                    } // ON TAP GESTURE
-                    .sensoryFeedback(.success, trigger: clipboardText == symbol)
+                                }, label: {
+                                    Label("Copy symbol name", systemImage: "doc.on.clipboard")
+                                }) // BUTTON + label
+                                
+                                Divider()
+                                
+                                if SFSymbols.shared.favoritesSymbols.contains(symbol) {
+                                    Button(action: {
+                                        if let index = SFSymbols.shared.favoritesSymbols.firstIndex(of: symbol) {
+                                            SFSymbols.shared.removeFromFavorites(index: index)
+                                            withAnimation {
+                                                removedFromFavorites = symbol
+                                                let seconds = 3.0
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                                    if removedFromFavorites == symbol {
+                                                        withAnimation {
+                                                            removedFromFavorites = ""
+                                                        } // WITH ANIMATION
+                                                    } // IF
+                                                } // DISPATCH QUEUE
+                                            } // WITH ANIMATION
+                                        } // IF LET
+                                    }, label: {
+                                        Label("Remove from Favorites", systemImage: "star.slash.fill")
+                                    }) // BUTTON + label
+                                } else {
+                                    Button(action: {
+                                        SFSymbols.shared.addToFavorites(symbol: symbol)
+                                        withAnimation {
+                                            addedToFavorites = symbol
+                                            let seconds = 3.0
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                                if addedToFavorites == symbol {
+                                                    withAnimation {
+                                                        addedToFavorites = ""
+                                                    } // WITH ANIMATION
+                                                } // IF
+                                            } // DISPATCH QUEUE
+                                        } // WITH ANIMATION
+                                    }, label: {
+                                        Label("Add to Favorites", systemImage: "star.fill")
+                                    }) // BUTTON + label
+                                } // IF ELSE
+                            } // SECTION
+                        } // CONTEXT MENU
+                        .onTapGesture {
+                            SFSymbols.shared.stringToClipboard(text: symbol)
+                            withAnimation {
+                                clipboardText = symbol
+                                let seconds = 3.0
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    if clipboardText == symbol {
+                                        withAnimation {
+                                            clipboardText = ""
+                                        } // WITH ANIMATION
+                                    } // IF
+                                } // DISPATCH QUEUE
+                            } // WITH ANIMATION
+                        } // ON TAP GESTURE
+                        .sensoryFeedback(.success, trigger: clipboardText == symbol)
+                    } // IF ELSE
                 } // FOR EACH
             } // LAZY V GRID
+            .animation(.easeInOut(duration: 0.15), value: searchText)
+            .animation(.easeInOut(duration: 0.15), value: SFSymbols.shared.selectedAllSymbols)
+            .animation(.easeInOut(duration: 0.15), value: SFSymbols.shared.searchedSymbols)
         } // SCROLL VIEW
         .overlay(
             ZStack {
                 if searchText != "" && SFSymbols.shared.searchedSymbols.isEmpty {
                     ContentUnavailableView.search(text: searchText)
+                    .animation(.easeInOut(duration: 0.15), value: searchText)
+                    .animation(.easeInOut(duration: 0.15), value: SFSymbols.shared.searchedSymbols)
                 } // IF
             } // ZSTACK
         ) // OVERLAY

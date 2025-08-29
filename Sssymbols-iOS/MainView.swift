@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     // selected tab
-    @State var selectedTab: Int = 1
+    @State var selectedTab: SFSymbols.Tabs = .all
     
     // search
     @State var searchText: String = ""
@@ -19,38 +19,38 @@ struct MainView: View {
     // body
     var body: some View {
         TabView(selection: $selectedTab) {
-            NavView(view: {
-                AllSymbolsView(searchText: $searchText)
-            }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
-            .tabItem {
-                Label("All", systemImage: "tray.full")
-                .environment(\.symbolVariants, selectedTab == 1 ? .fill : .none)
-            } // TAB ITEM
-            .tag(1)
+            Tab(value: .all) {
+                NavView(view: {
+                    AllSymbolsView(searchText: $searchText)
+                }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
+            } label: {
+                Label("All", systemImage: "seal")
+                .environment(\.symbolVariants, selectedTab == .all ? .fill : .none)
+            } // TAB + label
             
-            NavView(view: {
-                FavoritesView(searchFavoritesText: $searchFavoritesText)
-            }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
-            .tabItem {
+            Tab(value: .favorites) {
+                NavView(view: {
+                    FavoritesView(searchFavoritesText: $searchFavoritesText)
+                }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
+            } label: {
                 Label("Favorites", systemImage: "star")
-                .environment(\.symbolVariants, selectedTab == 2 ? .fill : .none)
-            } // TAB ITEM
-            .tag(2)
+                .environment(\.symbolVariants, selectedTab == .favorites ? .fill : .none)
+            } // TAB + label
             
-            NavView(view: {
-                InfoView()
-            }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
-            .tabItem {
+            Tab(value: .info) {
+                NavView(view: {
+                    InfoView()
+                }, selectedTab: $selectedTab, searchText: $searchText, searchFavoritesText: $searchFavoritesText)
+            } label: {
                 Label("Info", systemImage: "info.circle")
-                .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
-            } // TAB ITEM
-            .tag(3)
+                .environment(\.symbolVariants, selectedTab == .info ? .fill : .none)
+            } // TAB + label
         } // TAB VIEW
         .onChange(of: searchText) {
             SFSymbols.shared.searchedSymbols = SFSymbols.shared.allSymbols6.filter { $0.self.localizedCaseInsensitiveContains(searchText) }
         } // ON CHANGE
         .onChange(of: searchFavoritesText) {
-            SFSymbols.shared.searchedFavoritesSymbols = SFSymbols.shared.favoritesSymbols6.filter { $0.self.localizedCaseInsensitiveContains(searchFavoritesText) }
+            SFSymbols.shared.searchedFavoritesSymbols = SFSymbols.shared.favoritesSymbols.filter { $0.self.localizedCaseInsensitiveContains(searchFavoritesText) }
         } // ON CHANGE
     } // VAR BODY
 } // STRUCT MAIN VIEW

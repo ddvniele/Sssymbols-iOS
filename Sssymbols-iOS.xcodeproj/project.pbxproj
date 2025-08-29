@@ -16,6 +16,7 @@
 		647D8F662C8A735000C86BA4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F652C8A735000C86BA4 /* InfoView.swift */; };
 		647D8F682C8B5FA000C86BA4 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F672C8B5FA000C86BA4 /* SFSymbols.swift */; };
 		647D8F6A2C8B66A200C86BA4 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D8F692C8B66A200C86BA4 /* NavView.swift */; };
+		64D541D92E5CDB9000B07B9D /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 64D541D82E5CDB9000B07B9D /* AppIcon.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 		647D8F652C8A735000C86BA4 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		647D8F672C8B5FA000C86BA4 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		647D8F692C8B66A200C86BA4 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		64D541D82E5CDB9000B07B9D /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				647D8F5F2C8A730900C86BA4 /* Views */,
 				647D8F602C8A731100C86BA4 /* Models */,
 				647D8F552C8A724100C86BA4 /* Assets.xcassets */,
+				64D541D82E5CDB9000B07B9D /* AppIcon.icon */,
 				647D8F572C8A724100C86BA4 /* Preview Content */,
 			);
 			path = "Sssymbols-iOS";
@@ -148,7 +151,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					647D8F4D2C8A723F00C86BA4 = {
 						CreatedOnToolsVersion = 15.4;
@@ -180,6 +183,7 @@
 			files = (
 				647D8F592C8A724100C86BA4 /* Preview Assets.xcassets in Resources */,
 				647D8F562C8A724100C86BA4 /* Assets.xcassets in Resources */,
+				64D541D92E5CDB9000B07B9D /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +266,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -319,6 +324,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -341,11 +347,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddvniele.Sssymbols-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -375,11 +382,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddvniele.Sssymbols-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
