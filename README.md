@@ -16,6 +16,7 @@ You can keep the app with you on your iPhone and search for symbols anytime you 
 
 
 ## Download, install & usage
+- you can install the latest version of Clipboard with AltStore/SideStore through <code>📂 <a href="https://ddvniele.github.io/altsource">Dan's Source</a></code>
 - you can download the latest version of Sssymbols (iOS) on the [releases page](https://github.com/ddvniele/Sssymbols-iOS/releases/latest)
 - you can download a ZIP of the source files and modify what you'd like to with Xcode
 - you can fork this repo with your updated code or suggest changes [here](https://github.com/ddvniele/Sssymbols-iOS/pulls)
