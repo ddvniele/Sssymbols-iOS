@@ -27,12 +27,9 @@ You can keep the app with you on your iPhone and search for symbols anytime you 
 - copy symbol name on your clipboard with a click or a right-click
 - keep your favorites symbols always with you with the Favorites section
 
-## What's New (v3.0 - Aug 29, 2025)
-finally introducing full iOS 26 support! this update includes:
-- completely rewritten liquid glass interface (iOS 26+)
-- added support to SF Symbols 7
-- new animations and performaces improvements
-- dropped iOS 17 support to make room for iOS 26. if you're on iOS 17, check out the [last supported version](https://github.com/ddvniele/Sssymbols-iOS/releases/tag/Release-2.0.1)
+## What's New (v3.0.1 - Sep 05, 2025)
+- fixed liquid glass elements (iOS 26)
+- fixed search bar behavior
 
 ## Working on
 - cleaner UI and UX
@@ -40,6 +37,9 @@ finally introducing full iOS 26 support! this update includes:
 - so much more! these features are still a work-in-progress and they're not in the actual latest release yet.
 
 ## Changelog
+- v3.0.1 - Sep 05, 2025
+  - fixed liquid glass elements (iOS 26)
+  - fixed search bar behavior
 - v3.0 - Aug 29, 2025
   - finally introducing full iOS 26 support! this update includes:
     - completely rewritten liquid glass interface (iOS 26+)
